@@ -1,0 +1,14 @@
+name: Book Proofreader
+on: [push]
+
+jobs:
+  proofread:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Check Typos and Symbols
+        uses: crate-ci/typos@v1.20.0
+        with:
+          files: "."
